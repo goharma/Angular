@@ -1,0 +1,137 @@
+<!doctype html>
+<html ng-app="demo">
+    <head>
+        <!-- meta http-equiv="refresh" content="5; URL=http://192.168.73.104/" -->
+        <meta charset="utf-8">
+        <title>Docker/openShift Demo Application</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="js/helloworld.js"></script>
+        <!-- script>
+            setTimeout(function(){
+                window.location.reload(1);
+            }, 5000);
+        </script -->
+        <style>
+            body {
+                background-color: darkslategray;
+            }
+            img {
+                padding: 10px;
+            }
+            .section_header { font-size: 48px; font-variant: all-petite-caps; font-weight: bold; }
+            .section_container { padding: 20px; margin: 20px;}
+            div, td, body, div {
+                color: white;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 16px;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 400;
+                line-height: 20px;
+            }
+            .node_container { padding: 10px; }
+            .node { width: 400px; display: inline-block; padding: 10px; margin: 10px; }
+            .node.up {
+                background-color: limegreen;
+            }
+            .node.down {
+                background-color: red;
+            }
+
+            .vm_container { padding: 20px; }
+            .button { background-color: cornflowerblue; width: 60px; height: 20px; border: 1px solid black; padding: 10px; margin: 10px; }
+        </style>
+    </head>
+
+    <body>
+        <div class="section_header">
+            My App
+        </div>
+        <div class="section_container vm_container"></div>
+
+        <div class="section_header">
+            Pods
+        </div>
+        <div class="section_container vm_container">
+            <div ng-controller="Hello" class="node_container" >
+                <div ng-repeat="x in data.items" style="display: inline-block;">
+                    <a  href="" ng-if="x.state == 'running'">
+                        <div class="node up" >
+                            <table>
+                                <tr><td rowspan="5"><img src="img/facebook-like-48.png" width='48'></td></tr>
+                                <tr><td>Name:</td><td>{{x.name}}</td></tr>
+                                <tr><td>State:</td><td>{{x.state}}</td></tr>
+                                <tr><td>CPU Load:</td><td>{{x.jvmProcessorLoad}}</td></tr>
+                                <tr><td>Sessions:</td><td>{{x.activeHttpSessionCount}}</td></tr>
+                            </table>
+                        </div>
+                    </a>
+
+                    <div class="node down" ng-if="x.state != 'running'">
+                        <table>
+                            <tr><td rowspan="5"><img src="img/error-3-48.png" width='48'></td></tr>
+                            <tr><td>Name:</td><td>{{x.name}}</td></tr>
+                            <tr><td>State:</td><td>{{x.state}}</td></tr>
+                            <tr><td>CPU Load:</td><td>N/A</td></tr>
+                            <tr><td>Sessions:</td><td>N/A</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section_header">Actions</div>
+        <div class="section_container">
+            <div style="display: inline-block;">
+                <table>
+                    <tr>
+                        <td>
+                            <select ng-controller="Hello" class="node_container" >
+                                <option ng-repeat="x in data.items">Delete {{x.name}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href=""><img src="img/delete-32.png"></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="display: inline-block;">
+                <table>
+                    <tr>
+                        <td>
+                            <select ng-controller="Hello" class="node_container" >
+                                <option ng-repeat="x in data.items">Load {{x.name}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href=""><img src="img/running-man-32.png"></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="display: inline-block;">
+                <table>
+                    <tr>
+                        <td>
+                            <select ng-controller="Hello" class="node_container" >
+                                <option ng-repeat="x in data.items">Stop {{x.name}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href=""><img src="img/stop-3-32.png"></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section_header">Current VM Information</div>
+        <div class="section_container">
+            <div>Hostname:</div>
+            <div>Number of Connections:</div>
+        </div>
+
+
+    </body>
+</html>

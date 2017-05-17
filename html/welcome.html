@@ -1,0 +1,160 @@
+<html ng-app="demo">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="js/helloworld.js"></script>
+    <style>
+        .vm {
+            border: 1px;
+            float: left;
+            width: 100%;
+        }
+
+        body td{
+
+            font-family: Arial;
+            font-size: 10px;
+        }
+
+        .nodes {
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        .node {
+            float: left;
+            font-size: 10px;
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+
+        }
+
+        .node.up {
+            background-color: limegreen;
+        }
+
+        .node.down {
+            background-color: red;
+        }
+
+        current {
+            float: left;
+        }
+
+        .heading {
+            font-size: 24px;
+            margin: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="heading">
+    Application Name
+</div>
+
+
+<div class="heading">
+    Pods
+</div>
+<div class="body">
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <div>Pods</div>
+                    <div class="vm">
+                        <div class="nodes" ng-controller="Hello">
+
+                            <a href="">
+                                <div ng-controller="Hello">
+                                    <div ng-repeat="x in data.items">
+                                        <div class="node up" ng-if="x.state == 'running'">
+                                            <table>
+                                                <tr><td>Name:</td><td>{{x.name}}</td></tr>
+                                                <tr><td>State:</td><td>{{x.state}}</td></tr>
+                                                <tr><td>CPU Load:</td><td>{{x.jvmProcessorLoad}}</td></tr>
+                                            </table>
+                                        </div>
+
+                                        <div class="node down" ng-if="x.state == 'shutdown'">
+                                            <table>
+                                                <tr><td>Name:</td><td>{{x.name}}</td></tr>
+                                                <tr><td>State:</td><td>{{x.state}}</td></tr>
+                                                <tr><td>CPU Load:</td><td>{{x.jvmProcessorLoad}}</td></tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<div class="heading">
+    Current VM Information
+</div>
+<hr>
+<table>
+    <tr>
+        <td>
+            <div class="current">
+                <table width="500">
+                    <tr>
+                        <td>Current Hostname</td>
+                        <td>he3ilxvdmid501</td>
+                    </tr>
+                    <tr>
+                        <td>Current VM</td>
+                        <td>he3ilxvdmid501</td>
+                    </tr>
+                    <tr>
+                        <td>Number of connections</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Nodes</td>
+                        <td>WL1221DynamicDev1MServer6</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div class="heading">
+    Actions
+</div>
+<div>
+    Delete Pod
+    <select>
+        <option>Pod 1</option>
+        <option>Pod 2</option>
+        <option>Pod 3</option>
+        <option>Pod 4</option>
+        <option>Pod 5</option>
+        <option>Pod 6</option>
+    </select>
+    <a class="button main-button">Delete</a>
+</div>
+</body>
+</html>

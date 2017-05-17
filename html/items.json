@@ -1,0 +1,76 @@
+{
+    "items": [
+        {
+            "activeHttpSessionCount": 0,
+            "usedPhysicalMemory": 16285749248,
+            "jvmProcessorLoad": 0,
+            "heapFreeCurrent": 686470768,
+            "heapSizeCurrent": 1030225920,
+            "health": {"state": "ok"},
+            "activeThreadCount": 12,
+            "name": "WL1221DynamicDevAServer",
+            "state": "running"
+        },
+        {
+            "activeHttpSessionCount": 0,
+            "usedPhysicalMemory": 16330575872,
+            "jvmProcessorLoad": 0,
+            "heapFreeCurrent": 412646984,
+            "heapSizeCurrent": 519045120,
+            "health": {"state": "ok"},
+            "activeThreadCount": 10,
+            "name": "WL1221DynamicDev1MServer6",
+            "state": "shutdown"
+        },
+        {
+            "name": "DC1-1",
+            "state": "admin"
+        },
+        {
+            "name": "DC1-2",
+            "state": "shutdown"
+        },
+        {
+            "activeHttpSessionCount": 0,
+            "usedPhysicalMemory": 16285749248,
+            "jvmProcessorLoad": 0,
+            "heapFreeCurrent": 758527328,
+            "heapSizeCurrent": 1020788736,
+            "health": {"state": "ok"},
+            "activeThreadCount": 13,
+            "name": "WL1221DynamicDev1MServer5",
+            "state": "running"
+        }
+    ],
+    "links": [
+        {
+            "rel": "parent",
+            "uri": "http:\/\/he3ilxvdmid501:23500\/management\/wls\/latest"
+        },
+        {
+            "rel": "items.name",
+            "uri": "http:\/\/he3ilxvdmid501:23500\/management\/wls\/latest\/servers\/id\/WL1221DynamicDevAServer",
+            "title": "WL1221DynamicDevAServer"
+        },
+        {
+            "rel": "items.name",
+            "uri": "http:\/\/he3ilxvdmid501:23500\/management\/wls\/latest\/servers\/id\/WL1221DynamicDev1MServer6",
+            "title": "WL1221DynamicDev1MServer6"
+        },
+        {
+            "rel": "items.name",
+            "uri": "http:\/\/he3ilxvdmid501:23500\/management\/wls\/latest\/servers\/id\/DC1-1",
+            "title": "DC1-1"
+        },
+        {
+            "rel": "items.name",
+            "uri": "http:\/\/he3ilxvdmid501:23500\/management\/wls\/latest\/servers\/id\/DC1-2",
+            "title": "DC1-2"
+        },
+        {
+            "rel": "items.name",
+            "uri": "http:\/\/he3ilxvdmid501:23500\/management\/wls\/latest\/servers\/id\/WL1221DynamicDev1MServer5",
+            "title": "WL1221DynamicDev1MServer5"
+        }
+    ]
+}
